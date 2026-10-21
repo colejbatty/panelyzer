@@ -27,7 +27,7 @@ jobs:
       - uses: softprops/action-gh-release@v2
         with:
           body_path: notes.md
-          prerelease: ${{ contains(github.ref_name, '-') || startsWith(github.ref_name, 'v0.') }}
+          prerelease: ${{ contains(github.ref_name, '-') }}  # e.g. v1.0.0-rc1; Zenodo should archive normal releases
           files: |
             dist/Panelyzer.html
             plugin/panel_check_tab.py
