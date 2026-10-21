@@ -30,9 +30,9 @@ jobs:
         run: |
           mkdir -p _site
           cp dist/index.html _site/index.html
-          cp dist/SpectralPanelDesigner.html _site/SpectralPanelDesigner.html
+          cp dist/Panelyzer.html _site/Panelyzer.html
           cp plugin/panel_check_tab.py _site/panel_check_tab.py
-          cp examples/*.spd.json _site/
+          cp examples/*.panelyzer.json _site/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

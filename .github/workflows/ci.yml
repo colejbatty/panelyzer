@@ -35,8 +35,8 @@ jobs:
           retention-days: 7
       - uses: actions/upload-artifact@v4
         with:
-          name: SpectralPanelDesigner
-          path: dist/SpectralPanelDesigner.html
+          name: Panelyzer
+          path: dist/Panelyzer.html
 
   plugin:
     name: Honeychrome plugin tests (Python ${{ matrix.python }})

@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 // SPDX-License-Identifier: LGPL-3.0-or-later
 // Copyright (C) 2026 Cole Batty and contributors
-// Bundles Spectral Panel Designer into one self-contained, offline HTML file.
-//   node scripts/build.mjs          -> dist/SpectralPanelDesigner.html (+ dist/index.html for GitHub Pages)
+// Bundles Panelyzer into one self-contained, offline HTML file.
+//   node scripts/build.mjs          -> dist/Panelyzer.html (+ dist/index.html for GitHub Pages)
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -43,6 +43,6 @@ const html = read('src/index.html')
   .replace('__BUILD__', buildDate());
 
 mkdirSync(join(root, 'dist'), { recursive: true });
-writeFileSync(join(root, 'dist', 'SpectralPanelDesigner.html'), html);
+writeFileSync(join(root, 'dist', 'Panelyzer.html'), html);
 writeFileSync(join(root, 'dist', 'index.html'), html);
-console.log(`dist/SpectralPanelDesigner.html  ${(html.length / 1024).toFixed(0)} KB  (v${pkg.version})`);
+console.log(`dist/Panelyzer.html  ${(html.length / 1024).toFixed(0)} KB  (v${pkg.version})`);

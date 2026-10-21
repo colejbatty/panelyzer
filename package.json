@@ -1,16 +1,16 @@
 {
-  "name": "spectral-panel-designer",
+  "name": "panelyzer",
   "version": "0.9.0",
   "description": "Offline, single-file tool for designing spectral flow cytometry panels: similarity, complexity, predicted spread, fluor and marker optimization, with Honeychrome integration.",
   "license": "LGPL-3.0-or-later",
   "author": "Cole Batty",
-  "homepage": "https://OWNER.github.io/spectral-panel-designer/",
+  "homepage": "https://colejbatty.github.io/panelyzer/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OWNER/spectral-panel-designer.git"
+    "url": "git+https://github.com/colejbatty/panelyzer.git"
   },
   "bugs": {
-    "url": "https://github.com/OWNER/spectral-panel-designer/issues"
+    "url": "https://github.com/colejbatty/panelyzer/issues"
   },
   "keywords": [
     "flow cytometry",

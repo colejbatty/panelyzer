@@ -36,3 +36,12 @@ test('panel analysis + warnings on a tiny panel', () => {
   const w = A.panelWarnings().map(x => x.text).join('\n');
   assert.match(w, /not in the library/);
 });
+
+test('panel files: saved as "panelyzer"; files from before the rename still open', () => {
+  const saved = JSON.parse(A.serialize());
+  assert.equal(saved.app, 'panelyzer');
+  const legacy = Object.assign({}, saved, { app: 'spectral-panel-designer', panelName: 'Old file' });
+  A.load(legacy);
+  assert.equal(JSON.parse(A.serialize()).app, 'panelyzer');
+  assert.throws(() => A.load(Object.assign({}, saved, { app: 'something-else' })), /not a Panelyzer panel/);
+});

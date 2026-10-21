@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 // Copyright (C) 2026 Cole Batty and contributors
-/* Spectral Panel Designer — computation engine (no DOM).
+/* Panelyzer — computation engine (no DOM).
  * Works in the browser (window.SPD) and in Node (module.exports) for testing.
  */
 (function (root, factory) {

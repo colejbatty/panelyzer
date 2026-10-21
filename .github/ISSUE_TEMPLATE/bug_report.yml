@@ -28,4 +28,4 @@ body:
     id: files
     attributes:
       label: Panel file or screenshots
-      description: Drag in the .spd.json (Save) or screenshots if you can share them. Please don't attach patient or unpublished experiment data.
+      description: Drag in the .panelyzer.json (Save) or screenshots if you can share them. Please don't attach patient or unpublished experiment data.

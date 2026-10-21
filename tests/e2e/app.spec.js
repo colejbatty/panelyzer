@@ -1,10 +1,10 @@
-// End-to-end tests against the built single file (dist/SpectralPanelDesigner.html).
+// End-to-end tests against the built single file (dist/Panelyzer.html).
 const { test, expect } = require('@playwright/test');
 const path = require('node:path');
 const fs = require('node:fs');
 
 const ROOT = path.join(__dirname, '..', '..');
-const APP = 'file://' + path.join(ROOT, 'dist', 'SpectralPanelDesigner.html');
+const APP = 'file://' + path.join(ROOT, 'dist', 'Panelyzer.html');
 const FIX = name => path.join(ROOT, 'tests', 'fixtures', name);
 
 /** Opens the app, collecting page errors and any non-file network request. */
@@ -96,10 +96,10 @@ test('save and reopen preserves the panel', async ({ page }, info) => {
   await loadExample(page);
   const before = await page.$$eval('#panel-body tr', t => t.map(r => r.querySelector('.m-marker').value + '|' + r.querySelector('.m-fluor').value));
   const [dl] = await Promise.all([page.waitForEvent('download'), page.click('#btn-save')]);
-  const file = info.outputPath('panel.spd.json');
+  const file = info.outputPath('panel.panelyzer.json');
   await dl.saveAs(file);
   const saved = JSON.parse(fs.readFileSync(file, 'utf8'));
-  expect(saved.app).toBe('spectral-panel-designer');
+  expect(saved.app).toBe('panelyzer');
   await page.click('#btn-new');
   await expect(rows(page)).toHaveCount(0);
   const [fc] = await Promise.all([page.waitForEvent('filechooser'), page.click('#btn-open')]);

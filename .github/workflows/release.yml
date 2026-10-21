@@ -29,5 +29,5 @@ jobs:
           body_path: notes.md
           prerelease: ${{ contains(github.ref_name, '-') || startsWith(github.ref_name, 'v0.') }}
           files: |
-            dist/SpectralPanelDesigner.html
+            dist/Panelyzer.html
             plugin/panel_check_tab.py

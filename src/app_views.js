@@ -1195,7 +1195,7 @@
   function printReport() {
     const rep = $('#report'); rep.replaceChildren();
     const { names, cols, an } = A.analysis(), n = names.length;
-    rep.append(h('h1', null, S().panelName), h('p', { class: 'muted' }, `${A.baseInstrument().name} · ${n} fluors · generated ${new Date().toLocaleString()} · Spectral Panel Designer ${A.APP_VERSION}`));
+    rep.append(h('h1', null, S().panelName), h('p', { class: 'muted' }, `${A.baseInstrument().name} · ${n} fluors · generated ${new Date().toLocaleString()} · Panelyzer ${A.APP_VERSION}`));
     rep.append(h('div', { class: 'tiles' },
       h('div', { class: 'tile' }, h('div', { class: 'label' }, 'Complexity index'), h('div', { class: 'value' }, fmtCI(an.ci))),
       h('div', { class: 'tile' }, h('div', { class: 'label' }, 'Highest similarity'), h('div', { class: 'value' }, an.maxCos ? an.maxCos.v.toFixed(3) : '—'), h('div', { class: 'detail' }, an.maxCos ? `${names[an.maxCos.i]} · ${names[an.maxCos.j]}` : ''))));
@@ -1249,10 +1249,10 @@
   /* ---- file handling (File System Access API when available, download fallback) */
   let fileHandle = null;
   async function save(as) {
-    const text = A.serialize(), name = A.safeName(S().panelName) + '.spd.json';
+    const text = A.serialize(), name = A.safeName(S().panelName) + '.panelyzer.json';
     if (window.showSaveFilePicker) {
       try {
-        if (!fileHandle || as) fileHandle = await window.showSaveFilePicker({ suggestedName: name, types: [{ description: 'Spectral panel', accept: { 'application/json': ['.json'] } }] });
+        if (!fileHandle || as) fileHandle = await window.showSaveFilePicker({ suggestedName: name, types: [{ description: 'Panelyzer panel', accept: { 'application/json': ['.json'] } }] });
         const w = await fileHandle.createWritable(); await w.write(text); await w.close();
         A.markClean(); A.toast('Saved ' + fileHandle.name); return;
       } catch (e) { if (e.name === 'AbortError') return; console.warn(e); }
@@ -1263,7 +1263,7 @@
     if (A.isDirty() && !confirm('Discard unsaved changes and open another panel?')) return;
     let text, handle = null;
     if (window.showOpenFilePicker) {
-      try { [handle] = await window.showOpenFilePicker({ types: [{ description: 'Spectral panel', accept: { 'application/json': ['.json'] } }] }); text = await (await handle.getFile()).text(); }
+      try { [handle] = await window.showOpenFilePicker({ types: [{ description: 'Panelyzer panel', accept: { 'application/json': ['.json'] } }] }); text = await (await handle.getFile()).text(); }
       catch (e) { if (e.name === 'AbortError') return; handle = null; }
     }
     if (text == null) { const f = await A.pickFiles('.json', false); if (!f.length) return; text = await A.readFile(f[0]); }

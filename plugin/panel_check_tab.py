@@ -1,11 +1,11 @@
 # SPDX-License-Identifier: LGPL-3.0-or-later
 # Copyright (C) 2026 Cole Batty and contributors
 """
-Panel Check — a Honeychrome plugin (companion to Spectral Panel Designer)
-=========================================================================
+Panel Check — a Honeychrome plugin (companion to Panelyzer)
+===========================================================
 
 Adds a "Panel Check" tab to Honeychrome that evaluates the experiment's current
-spectral model and closes the loop with Spectral Panel Designer:
+spectral model and closes the loop with Panelyzer:
 
   * Panel metrics on your real reference spectra: complexity index (fluors alone and
     with AutoSpectral autofluorescence), per-fluor cosine similarity, noise
@@ -17,7 +17,7 @@ spectral model and closes the loop with Spectral Panel Designer:
     and computes the empirical spillover-spreading matrix (robust SDs), stain index and
     unmixing residuals, then compares measured with predicted spread and fits the scale
     that converts the designer's relative units into this instrument's units.
-  * Export for Spectral Panel Designer: one JSON file the designer imports ("Import
+  * Export for Panelyzer: one JSON file the designer imports ("Import
     Honeychrome") to load these references, autofluorescence and the spread calibration.
 
 Install
@@ -30,7 +30,7 @@ Install
 * As a bundled plugin (inside the Honeychrome source tree): place it in
   src/honeychrome/bundled_plugins/ and enable "panel_check_tab" in App Configuration.
 
-Project: https://github.com/OWNER/spectral-panel-designer  (LGPL-3.0-or-later)
+Project: https://github.com/colejbatty/panelyzer  (LGPL-3.0-or-later)
 Nothing is sent anywhere; the export is written inside the experiment folder.
 """
 
@@ -53,7 +53,7 @@ except Exception:
 
 AGREE_WARN = 0.90      # library agreement below this: caution
 AGREE_BAD = 0.80       # below this: check control
-SIM_WARN = 0.98        # similarity limits (as in Spectral Panel Designer)
+SIM_WARN = 0.98        # similarity limits (as in Panelyzer)
 SIM_CAUTION = 0.90
 RESIDUAL_WARN = 0.03   # |median positive in another channel| / signal
 
@@ -358,7 +358,7 @@ def issues(model, res, info=None):
 
 
 def feedback_payload(model, res, experiment_name, measured=None):
-    """JSON payload for Spectral Panel Designer's "Import Honeychrome"."""
+    """JSON payload for Panelyzer's "Import Honeychrome"."""
     labs = model['labels']
     ctl = []
     for i, c in enumerate(model['controls']):
@@ -498,7 +498,7 @@ class PluginWidget(QWidget):
         outer.addWidget(scroll)
 
         title = QLabel(f'<h2 style="margin:0">Panel Check</h2><p style="color:#666;margin:2px 0 0">'
-                       f'Spectral model QC, predicted vs measured spread, and export to Spectral Panel Designer (v{PLUGIN_VERSION}).</p>')
+                       f'Spectral model QC, predicted vs measured spread, and export to Panelyzer (v{PLUGIN_VERSION}).</p>')
         title.setTextFormat(Qt.RichText)
         self.layout_main.addWidget(title)
 
@@ -508,7 +508,7 @@ class PluginWidget(QWidget):
         self.btn_measure = QPushButton('Measure spread from controls')
         self.btn_measure.setToolTip('Unmixes every single-stain control (positive gate vs negative) with the current unmixing matrix')
         self.btn_measure.clicked.connect(self.measure)
-        self.btn_export = QPushButton('Export for Spectral Panel Designer')
+        self.btn_export = QPushButton('Export for Panelyzer')
         self.btn_export.clicked.connect(self.export)
         for b in (self.btn_refresh, self.btn_measure, self.btn_export):
             row.addWidget(b)
@@ -609,7 +609,7 @@ class PluginWidget(QWidget):
         path = out_dir / f'{exp_dir.name} panel check.json'
         payload = feedback_payload(self.model, self.res, exp_dir.name, self.measured)
         path.write_text(json.dumps(payload, indent=1))
-        msg = f'Saved {path.name} in {out_dir}.\n\nIn Spectral Panel Designer: Library → Import Honeychrome, and pick this file.'
+        msg = f'Saved {path.name} in {out_dir}.\n\nIn Panelyzer: Library → Import Honeychrome, and pick this file.'
         if not self.measured:
             msg += '\n\nTip: run "Measure spread from controls" first to include the spread calibration.'
         QMessageBox.information(self, plugin_name, msg)
@@ -689,7 +689,7 @@ class PluginWidget(QWidget):
             self.results.addWidget(ExportablePlotWidget(figure_measured(m, r, self.measured), title='Panel Check measured spread', experiment_dir=exp_dir))
         note = QLabel("<p style='color:#666'>Predicted spread uses the experiment's own unmixing matrix and reference spectra with a photon-noise model "
                       "(relative units). Measured spread is (rSD²<sub>pos</sub> − rSD²<sub>neg</sub>)<sup>½</sup> / ΔF<sup>½</sup> per channel after unmixing each single-stain control; "
-                      "the fitted scale converts predicted units into this instrument's units and is exported to Spectral Panel Designer. "
+                      "the fitted scale converts predicted units into this instrument's units and is exported to Panelyzer. "
                       "Bead controls report bead brightness, not antibody brightness on cells.</p>")
         note.setTextFormat(Qt.RichText)
         note.setWordWrap(True)

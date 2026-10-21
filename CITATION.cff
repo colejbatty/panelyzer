@@ -1,7 +1,7 @@
 cff-version: 1.2.0
-message: "If you use Spectral Panel Designer, please cite it as below, and cite FPbase for the spectra."
-title: "Spectral Panel Designer"
-abstract: "Offline, single-file tool for designing spectral flow cytometry panels: signature similarity, complexity index, predicted spillover spreading, fluor-set and marker-assignment optimization, with Honeychrome integration."
+message: "If you use Panelyzer, please cite it as below, and cite FPbase for the spectra."
+title: "Panelyzer: offline spectral flow cytometry panel design"
+abstract: "Offline, single-file tool for designing spectral flow cytometry panels: signature similarity, complexity index, predicted spillover spreading, fluor-set and marker-assignment optimization, with Honeychrome integration. Developed with substantial assistance from Claude (Anthropic), a generative AI model, under the direction of Cole Batty; see the README."
 type: software
 authors:
   - family-names: Batty
@@ -9,8 +9,8 @@ authors:
 version: 0.9.0
 date-released: 2026-10-20
 license: LGPL-3.0-or-later
-repository-code: "https://github.com/OWNER/spectral-panel-designer"
-url: "https://OWNER.github.io/spectral-panel-designer/"
+repository-code: "https://github.com/colejbatty/panelyzer"
+url: "https://colejbatty.github.io/panelyzer/"
 keywords:
   - flow cytometry
   - spectral cytometry

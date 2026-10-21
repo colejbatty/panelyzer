@@ -2,11 +2,11 @@
 
 [Honeychrome](https://github.com/Cytkit/honeychrome) (Cytkit, LGPL-3.0) is an open-source
 application for spectral flow cytometry: it builds a spectral model from single-stain controls,
-unmixes, and analyses samples. Spectral Panel Designer plans the panel; Honeychrome runs it. The
+unmixes, and analyses samples. Panelyzer plans the panel; Honeychrome runs it. The
 two tools exchange data in three ways.
 
 ```
-Spectral Panel Designer                        Honeychrome
+Panelyzer                        Honeychrome
   measured library  ◄────────── bundled reference libraries (Aurora, ID7000)
   Import Honeychrome… ◄──────── experiment .kit (references, AF, labels)
   spread calibration ◄────────  Panel Check plugin export (.json)
@@ -53,7 +53,7 @@ shows:
     doesn't match the control.
   - The scale *c* that maps the designer's relative units onto your instrument's (median log ratio),
     and how well predicted and measured spread correlate.
-- **Export for Spectral Panel Designer**: writes `Panel Check/<experiment> panel check.json` inside
+- **Export for Panelyzer**: writes `Panel Check/<experiment> panel check.json` inside
   the experiment folder. Importing it in the designer (same **Import Honeychrome…** button) loads the
   references, AF profiles, stain indices and the spread scale, which then multiplies the designer's
   spreading matrix for that instrument.

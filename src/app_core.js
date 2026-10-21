@@ -5,6 +5,8 @@
   'use strict';
   const E = root.SPD, DATA = root.SPD_DATA, C = root.SPDCharts;
   const APP_VERSION = '0.9.0', FILE_VERSION = 1;
+  // File identifier. Panels saved before the rename to Panelyzer use the legacy id and still open.
+  const APP_ID = 'panelyzer', LEGACY_APP_IDS = ['spectral-panel-designer'];
 
   /* ------------------------------------------------------------ DOM helpers */
   function h(tag, attrs, ...kids) {
@@ -146,7 +148,7 @@
   /* ------------------------------------------------------------------ state */
   function defaultState() {
     return {
-      fileVersion: FILE_VERSION, app: 'spectral-panel-designer', panelName: 'Untitled panel',
+      fileVersion: FILE_VERSION, app: APP_ID, panelName: 'Untitled panel',
       instrumentId: 'aurora-5l', customInstruments: [], instOverrides: {}, fluorOverrides: {},
       customFluors: [], references: {}, useReferences: true, autofluorescence: {},
       rows: [],
@@ -388,17 +390,17 @@
     return JSON.stringify(s, null, 1);
   }
   function load(obj) {
-    if (!obj || obj.app !== 'spectral-panel-designer') throw new Error('This file is not a Spectral Panel Designer panel.');
+    if (!obj || (obj.app !== APP_ID && !LEGACY_APP_IDS.includes(obj.app))) throw new Error('This file is not a Panelyzer panel.');
     if ((obj.fileVersion || 0) > FILE_VERSION) throw new Error('This file was saved by a newer version of the tool.');
     const d = defaultState();
-    state = Object.assign(d, obj);
+    state = Object.assign(d, obj, { app: APP_ID });
     state.settings = Object.assign(defaultState().settings, obj.settings || {});
     state.ui = Object.assign(defaultState().ui, obj.ui || {});
     state.rows = (state.rows || []).map(r => Object.assign({ id: uid(), marker: '', fluor: '', expression: 2, priority: 'normal', tags: '', locked: false, notes: '' }, r));
   }
   function markDirty() { dirty = true; updateTitle(); }
   function markClean() { dirty = false; updateTitle(); }
-  function updateTitle() { document.title = (dirty ? '• ' : '') + (state.panelName || 'Untitled panel') + ' — Spectral Panel Designer'; }
+  function updateTitle() { document.title = (dirty ? '• ' : '') + (state.panelName || 'Untitled panel') + ' — Panelyzer'; }
 
   let afterLoad = () => {};
   function setAfterLoad(fn) { afterLoad = fn; }

@@ -1,12 +1,12 @@
 # Contributing
 
-Thanks for helping improve Spectral Panel Designer. Bug reports, dye and instrument requests,
+Thanks for helping improve Panelyzer. Bug reports, dye and instrument requests,
 measured reference spectra and code are all welcome.
 
 ## Reporting problems
 
 - **Bugs:** open an issue with the browser and version, what you did, and what you expected. Attach
-  the `.spd.json` panel if you can (Save writes one). Leave out anything you can't share.
+  the `.panelyzer.json` panel if you can (Save writes one). Leave out anything you can't share.
 - **A dye is missing or looks wrong:** use the *Dye or spectrum request* template. Link the FPbase
   page or the manufacturer's spectrum. A measured reference from your instrument (exported signature
   CSV) is the most useful thing you can send.
@@ -20,13 +20,13 @@ Requirements: Node.js ≥ 20; Python ≥ 3.10 with NumPy for the plugin tests.
 ```sh
 npm ci
 npx playwright install chromium   # once, for end-to-end tests
-npm run build                     # dist/SpectralPanelDesigner.html
+npm run build                     # dist/Panelyzer.html
 npm test                          # unit tests
 npm run test:e2e                  # end-to-end tests
 pip install -r plugin/requirements-test.txt && npm run test:plugin
 ```
 
-Open `dist/SpectralPanelDesigner.html` directly in a browser; there is no dev server. Rebuild after
+Open `dist/Panelyzer.html` directly in a browser; there is no dev server. Rebuild after
 each change.
 
 ## Code guidelines
@@ -55,6 +55,11 @@ each change.
 - **Honeychrome plugin:** keep the numerical core free of Qt so `plugin/tests` runs with NumPy only.
 
 ## Pull requests
+
+AI-assisted contributions are welcome. Say in the PR which tools you used and for what, and make
+sure you have tested the change and can explain it. Panelyzer itself was built this way (see the
+README), and the same standard of tests and validation applies.
+
 
 Keep PRs focused, describe how you tested them, and make sure CI passes. By contributing you agree
 that your contribution is licensed under LGPL-3.0-or-later (data under the license of its source;

@@ -1,4 +1,4 @@
-# Spectral Panel Designer
+# Panelyzer
 
 **An offline, single-file tool for designing spectral flow cytometry panels.**
 Pick an instrument, list your markers, and see signature similarity, complexity index and
@@ -6,9 +6,10 @@ predicted spillover spreading update as you edit. Let the optimizers pick a low-
 set, place markers on fluors, or rank the fluors that would fit best as your next marker.
 Everything runs in your browser from one HTML file: no account, no server, no network requests.
 
-[**Open the app**](https://OWNER.github.io/spectral-panel-designer/) ·
-[Download the HTML](https://github.com/OWNER/spectral-panel-designer/releases/latest) ·
-[Methods](docs/METHODS.md) · [Validation](docs/VALIDATION.md) · [Honeychrome integration](docs/HONEYCHROME.md)
+[**Open the app**](https://colejbatty.github.io/panelyzer/) ·
+[Download the HTML](https://github.com/colejbatty/panelyzer/releases/latest) ·
+[Methods](docs/METHODS.md) · [Validation](docs/VALIDATION.md) · [Honeychrome integration](docs/HONEYCHROME.md) ·
+[How it was made](#how-panelyzer-was-made)
 
 > **Status: beta (v0.9).** The math is tested against NumPy and the simulated spectra are validated
 > against measured reference libraries (below), but predictions are planning estimates. Always
@@ -38,7 +39,7 @@ Everything runs in your browser from one HTML file: no account, no server, no ne
     much it would hurt the markers already in the panel.
 - **Import** Cytek-style panel CSVs (vendor names such as "cFluor B520", "NovaFluor Blue 610-30S"
   and "Brilliant Violet 605" resolve automatically), pasted lists, and Honeychrome experiments.
-- **Save/open** panels as `.spd.json`; export CSVs (signatures, matrices, single-stain control
+- **Save/open** panels as `.panelyzer.json`; export CSVs (signatures, matrices, single-stain control
   checklist) and a printable report.
 
 | Analysis | Best fluors to add |
@@ -47,8 +48,8 @@ Everything runs in your browser from one HTML file: no account, no server, no ne
 
 ## Quick start
 
-1. Download `SpectralPanelDesigner.html` from the [latest release](https://github.com/OWNER/spectral-panel-designer/releases/latest)
-   (or use the [hosted copy](https://OWNER.github.io/spectral-panel-designer/), which is the same file).
+1. Download `Panelyzer.html` from the [latest release](https://github.com/colejbatty/panelyzer/releases/latest)
+   (or use the [hosted copy](https://colejbatty.github.io/panelyzer/), which is the same file).
 2. Open it in a current Chrome, Edge, Firefox or Safari. It works from a local file with no internet.
 3. Click **Load example**, or **Import panel…** to bring in a Cytek panel CSV.
 
@@ -103,7 +104,7 @@ browser. Panels, FCS files and references stay on your computer unless you save 
 
 ```sh
 npm ci
-npm run build        # -> dist/SpectralPanelDesigner.html
+npm run build        # -> dist/Panelyzer.html
 npm test             # unit tests (node:test)
 npm run test:e2e     # Playwright end-to-end tests (run `npx playwright install chromium` once)
 npm run validate     # simulated vs measured spectra table
@@ -123,6 +124,21 @@ The source is plain JavaScript with no runtime dependencies:
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) to add a dye, an instrument or a feature.
 
+## How Panelyzer was made
+
+Panelyzer was developed with substantial help from **Claude** (Anthropic), a generative AI model,
+used through Claude's Cowork mode in October 2026.
+
+- **Cole Batty** set the goals, requirements and design decisions; supplied real panels and
+  Honeychrome experiments for testing; reported problems; and decided what to change. He is
+  responsible for the project and its releases.
+- **Claude** wrote most of the code, tests and documentation, and ran the validation scripts.
+  Commits made with AI assistance carry a `Co-Authored-By: Claude` trailer.
+
+Nothing in this repository depends on trusting that process: the math is checked against NumPy, and
+every number in [docs/VALIDATION.md](docs/VALIDATION.md) comes from scripts here that anyone can
+rerun. If you find an error, please [open an issue](https://github.com/colejbatty/panelyzer/issues).
+
 ## License and data
 
 - Code: **LGPL-3.0-or-later** © Cole Batty and contributors ([COPYING.LESSER](COPYING.LESSER), [COPYING](COPYING)).
@@ -134,5 +150,6 @@ Details and attribution are in [DATA_LICENSES.md](DATA_LICENSES.md).
 
 ## Citing
 
-If you use this tool in published work, please cite it using [CITATION.cff](CITATION.cff), and cite
-FPbase (Lambert, *Nat Methods* 2019, doi:10.1038/s41592-019-0352-8) for the spectra.
+If you use Panelyzer in published work, please cite the archived release (GitHub's "Cite this
+repository" button reads [CITATION.cff](CITATION.cff); each release is archived on Zenodo with a
+DOI), and cite FPbase (Lambert, *Nat Methods* 2019, doi:10.1038/s41592-019-0352-8) for the spectra.

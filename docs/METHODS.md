@@ -1,6 +1,6 @@
 # Methods
 
-How every number in Spectral Panel Designer is computed. The same text, slightly shorter, is in the
+How every number in Panelyzer is computed. The same text, slightly shorter, is in the
 app under **Methods & help**. Code references point to `src/engine.js` unless noted.
 
 ## Spectra
@@ -121,9 +121,9 @@ Autofluorescence from an unstained file is the median of scatter-gated events
 
 ## File formats
 
-- **Panel** (`.spd.json`): `{ app: "spectral-panel-designer", fileVersion, panelName, instrumentId,
+- **Panel** (`.panelyzer.json`): `{ app: "panelyzer", fileVersion, panelName, instrumentId,
   rows, references, autofluorescence, customFluors, customInstruments, settings, … }`. See
-  `examples/example_24color_pbmc.spd.json`.
+  `examples/example_24color_pbmc.panelyzer.json`.
 - **Reference CSV/TSV**: fluors in rows or detectors in rows. Detector names match case-insensitively
   with -A/-H suffixes ignored.
 - **Panel CSV**: Cytek-style exports and free tables with marker and fluor columns. Fluor names

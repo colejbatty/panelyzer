@@ -14,6 +14,6 @@ const files = ['README.md', 'CITATION.cff', 'CHANGELOG.md', 'CONTRIBUTING.md', '
 for (const f of files) {
   let s;
   try { s = readFileSync(join(root, f), 'utf8'); } catch { continue; }
-  const t = s.replace(/OWNER(?=\.github\.io|\/spectral-panel-designer)/g, owner);
+  const t = s.replace(/OWNER(?=\.github\.io|\/panelyzer)/g, owner);
   if (t !== s) { writeFileSync(join(root, f), t); console.log('updated', f); }
 }

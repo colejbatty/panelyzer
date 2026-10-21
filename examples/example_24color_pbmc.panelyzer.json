@@ -1,6 +1,6 @@
 {
  "fileVersion": 1,
- "app": "spectral-panel-designer",
+ "app": "panelyzer",
  "panelName": "Example: 24-color human PBMC",
  "instrumentId": "aurora-5l",
  "customInstruments": [],
@@ -12,7 +12,7 @@
  "autofluorescence": {},
  "rows": [
   {
-   "id": "o913kbvh",
+   "id": "4qvzzlbf",
    "marker": "Live/Dead",
    "fluor": "Zombie NIR",
    "expression": 4,
@@ -22,7 +22,7 @@
    "notes": ""
   },
   {
-   "id": "bvwn0ww3",
+   "id": "fz5d7tti",
    "marker": "CD45",
    "fluor": "BUV805",
    "expression": 3,
@@ -32,7 +32,7 @@
    "notes": ""
   },
   {
-   "id": "zcfj5h1u",
+   "id": "fer257an",
    "marker": "CD3",
    "fluor": "BUV395",
    "expression": 3,
@@ -42,7 +42,7 @@
    "notes": ""
   },
   {
-   "id": "gtt0w5pk",
+   "id": "l757f2ee",
    "marker": "CD4",
    "fluor": "BUV496",
    "expression": 3,
@@ -52,7 +52,7 @@
    "notes": ""
   },
   {
-   "id": "pqrgblah",
+   "id": "sw00fush",
    "marker": "CD8",
    "fluor": "BV510",
    "expression": 3,
@@ -62,7 +62,7 @@
    "notes": ""
   },
   {
-   "id": "owipcuk9",
+   "id": "3zm7l20y",
    "marker": "CD45RA",
    "fluor": "BUV737",
    "expression": 3,
@@ -72,7 +72,7 @@
    "notes": ""
   },
   {
-   "id": "008h5cyw",
+   "id": "p3ehemnq",
    "marker": "CCR7",
    "fluor": "BV421",
    "expression": 2,
@@ -82,7 +82,7 @@
    "notes": ""
   },
   {
-   "id": "bklsjhrk",
+   "id": "mrsapt1r",
    "marker": "CD27",
    "fluor": "BV785",
    "expression": 2,
@@ -92,7 +92,7 @@
    "notes": ""
   },
   {
-   "id": "aqkw3k98",
+   "id": "c4lkn6jd",
    "marker": "CD28",
    "fluor": "BV605",
    "expression": 2,
@@ -102,7 +102,7 @@
    "notes": ""
   },
   {
-   "id": "f4y320sh",
+   "id": "q8o3wsia",
    "marker": "PD-1",
    "fluor": "PE",
    "expression": 1,
@@ -112,7 +112,7 @@
    "notes": ""
   },
   {
-   "id": "wculn908",
+   "id": "7vvmbhos",
    "marker": "CD25",
    "fluor": "PE-Cy5",
    "expression": 1,
@@ -122,7 +122,7 @@
    "notes": ""
   },
   {
-   "id": "mvmncx2o",
+   "id": "nw91vypf",
    "marker": "CD127",
    "fluor": "BV711",
    "expression": 2,
@@ -132,7 +132,7 @@
    "notes": ""
   },
   {
-   "id": "8xs899ds",
+   "id": "eqbnzfv5",
    "marker": "HLA-DR",
    "fluor": "BV650",
    "expression": 3,
@@ -142,7 +142,7 @@
    "notes": ""
   },
   {
-   "id": "y6gvhwd3",
+   "id": "rfuikea7",
    "marker": "CD19",
    "fluor": "BUV563",
    "expression": 3,
@@ -152,7 +152,7 @@
    "notes": ""
   },
   {
-   "id": "gfvpwvw4",
+   "id": "q5eri00n",
    "marker": "CD56",
    "fluor": "BUV661",
    "expression": 2,
@@ -162,7 +162,7 @@
    "notes": ""
   },
   {
-   "id": "romau7zt",
+   "id": "zersgyqi",
    "marker": "CD16",
    "fluor": "BB515",
    "expression": 3,
@@ -172,7 +172,7 @@
    "notes": ""
   },
   {
-   "id": "hofwv68w",
+   "id": "fqmxi6o9",
    "marker": "CD14",
    "fluor": "BV570",
    "expression": 3,
@@ -182,7 +182,7 @@
    "notes": ""
   },
   {
-   "id": "anv13amy",
+   "id": "48h4dw5m",
    "marker": "CD38",
    "fluor": "APC-Fire 750",
    "expression": 3,
@@ -192,7 +192,7 @@
    "notes": ""
   },
   {
-   "id": "7horeuyz",
+   "id": "dx0nrmsp",
    "marker": "CXCR5",
    "fluor": "BB700",
    "expression": 1,
@@ -202,7 +202,7 @@
    "notes": ""
   },
   {
-   "id": "t6gpfk2d",
+   "id": "tfml0tu6",
    "marker": "CD57",
    "fluor": "Spark Blue 550",
    "expression": 3,
@@ -212,7 +212,7 @@
    "notes": ""
   },
   {
-   "id": "sqnbezoc",
+   "id": "j2uktt1j",
    "marker": "TIGIT",
    "fluor": "PE-Cy7",
    "expression": 2,
@@ -222,7 +222,7 @@
    "notes": ""
   },
   {
-   "id": "98xyxbba",
+   "id": "yc7c4dc3",
    "marker": "CD161",
    "fluor": "APC",
    "expression": 2,
@@ -232,7 +232,7 @@
    "notes": ""
   },
   {
-   "id": "5vo5xmsg",
+   "id": "m69nu5m9",
    "marker": "CD95",
    "fluor": "PE-Cy5.5",
    "expression": 2,
@@ -242,7 +242,7 @@
    "notes": ""
   },
   {
-   "id": "6ibzl3li",
+   "id": "ejssv544",
    "marker": "CD39",
    "fluor": "Alexa Fluor 700",
    "expression": 1,
@@ -274,6 +274,6 @@
    "inventory": false
   }
  },
- "savedAt": "2026-10-21T02:26:54.493Z",
+ "savedAt": "2026-10-21T16:39:08.421Z",
  "appVersion": "0.9.0"
 }

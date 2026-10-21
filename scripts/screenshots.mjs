@@ -17,7 +17,7 @@ mkdirSync(out, { recursive: true });
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1, colorScheme: 'light' });
 page.on('dialog', d => d.accept());
-await page.goto('file://' + join(root, 'dist', 'SpectralPanelDesigner.html'));
+await page.goto('file://' + join(root, 'dist', 'Panelyzer.html'));
 await page.addStyleTag({ content: '.toast, .toasts, #toasts { display: none !important; }' });
 await page.getByRole('button', { name: 'Load example' }).first().click();
 await page.waitForTimeout(400);
