@@ -4,7 +4,7 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow
 [Semantic Versioning](https://semver.org/).
 
-## [0.9.0] - 2026-10-20
+## [0.9.0] - 2026-10-21
 
 First public release (beta). The project was developed as "Spectral Panel Designer" and renamed
 Panelyzer before release; panel files saved under the old name still open.

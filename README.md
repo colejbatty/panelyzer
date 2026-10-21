@@ -1,5 +1,7 @@
 # Panelyzer
 
+[![DOI](https://zenodo.org/badge/1428688503.svg)](https://doi.org/10.5281/zenodo.23540198)
+
 **An offline, single-file tool for designing spectral flow cytometry panels.**
 Pick an instrument, list your markers, and see signature similarity, complexity index and
 predicted spillover spreading update as you edit. Let the optimizers pick a low-complexity fluor
@@ -150,6 +152,11 @@ Details and attribution are in [DATA_LICENSES.md](DATA_LICENSES.md).
 
 ## Citing
 
-If you use Panelyzer in published work, please cite the archived release (GitHub's "Cite this
-repository" button reads [CITATION.cff](CITATION.cff); each release is archived on Zenodo with a
-DOI), and cite FPbase (Lambert, *Nat Methods* 2019, doi:10.1038/s41592-019-0352-8) for the spectra.
+If you use Panelyzer in published work, please cite the version you used. For v0.9.0:
+
+> Batty, C. (2026). *Panelyzer: offline spectral flow cytometry panel design* (Version 0.9.0)
+> [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.23540199
+
+To refer to the project as a whole (all versions), use https://doi.org/10.5281/zenodo.23540198.
+GitHub's "Cite this repository" button gives the same information from [CITATION.cff](CITATION.cff).
+Please also cite FPbase (Lambert, *Nat Methods* 2019, doi:10.1038/s41592-019-0352-8) for the spectra.

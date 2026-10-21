@@ -7,7 +7,15 @@ authors:
   - family-names: Batty
     given-names: Cole
 version: 0.9.0
-date-released: 2026-10-20
+doi: 10.5281/zenodo.23540199
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23540199
+    description: "Zenodo archive of this version (v0.9.0)"
+  - type: doi
+    value: 10.5281/zenodo.23540198
+    description: "Zenodo concept DOI (all versions)"
+date-released: 2026-10-21
 license: LGPL-3.0-or-later
 repository-code: "https://github.com/colejbatty/panelyzer"
 url: "https://colejbatty.github.io/panelyzer/"
