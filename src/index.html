@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data: blob:; connect-src 'none'; font-src 'none'; form-action 'none'; base-uri 'none'">
+<title>Spectral Panel Designer</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23141413'/%3E%3Cpath d='M5 22 Q9 8 13 22 T21 22 T27 14' fill='none' stroke='%234a93ea' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>/*__CSS__*/</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-row">
+    <div class="brand">
+      <svg width="24" height="24" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="currentColor" opacity=".92"/><path d="M5 22 Q9 8 13 22 T21 22 T27 14" fill="none" stroke="#4a93ea" stroke-width="2.6" stroke-linecap="round"/></svg>
+      Spectral Panel Designer
+    </div>
+    <span class="offline-chip" title="This file runs entirely in your browser. It makes no network requests; panels are saved only where you choose.">Offline · local only</span>
+    <input id="panel-name" class="panel-name" type="text" aria-label="Panel name" value="Untitled panel">
+    <div class="spacer"></div>
+    <label class="row" style="gap:6px"><span class="muted small">Instrument</span><select id="instrument" aria-label="Instrument" style="max-width:270px"></select></label>
+    <button class="icon-btn" id="btn-undo" title="Undo (Ctrl/⌘+Z)" aria-label="Undo">↶</button>
+    <button class="icon-btn" id="btn-redo" title="Redo (Ctrl/⌘+Shift+Z)" aria-label="Redo">↷</button>
+    <button class="btn ghost" id="btn-new">New</button>
+    <button class="btn" id="btn-open" title="Ctrl/⌘+O">Open…</button>
+    <button class="btn primary" id="btn-save" title="Ctrl/⌘+S">Save</button>
+    <div class="menu" id="export-menu">
+      <button class="btn">Export ▾</button>
+      <div class="menu-list hidden" id="export-list" role="menu">
+        <button data-act="saveas" role="menuitem">Save as…</button>
+        <hr>
+        <button data-act="report" role="menuitem">Print / PDF report</button>
+        <button data-act="panelcsv" role="menuitem">Panel table (CSV)</button>
+        <button data-act="controls" role="menuitem">Single-stain control checklist (CSV)</button>
+        <button data-act="sigcsv" role="menuitem">Panel signatures (CSV)</button>
+        <button data-act="simcsv" role="menuitem">Similarity matrix (CSV)</button>
+        <button data-act="sscsv" role="menuitem">Spreading matrix (CSV)</button>
+        <button data-act="wcsv" role="menuitem">Unmixing matrix (CSV)</button>
+        <hr>
+        <button data-act="libcsv" role="menuitem">All library signatures for this instrument (CSV)</button>
+      </div>
+    </div>
+    <button class="icon-btn" id="theme-btn" aria-label="Toggle theme">◐</button>
+  </div>
+  <nav class="tabs" role="tablist">
+    <button class="tab" role="tab" data-tab="panel" aria-selected="true">Panel<span class="count" id="count-panel"></span></button>
+    <button class="tab" role="tab" data-tab="analysis">Analysis</button>
+    <button class="tab" role="tab" data-tab="optimize">Optimize</button>
+    <button class="tab" role="tab" data-tab="library">Library<span class="count" id="count-library"></span></button>
+    <button class="tab" role="tab" data-tab="instrument">Instrument</button>
+    <button class="tab" role="tab" data-tab="help">Methods &amp; help</button>
+  </nav>
+</header>
+
+<main>
+  <section id="tab-panel"></section>
+  <section id="tab-analysis" class="hidden"></section>
+  <section id="tab-optimize" class="hidden"></section>
+  <section id="tab-library" class="hidden"></section>
+  <section id="tab-instrument" class="hidden"></section>
+  <section id="tab-help" class="hidden">
+    <div class="section-head"><div><h2>Methods &amp; help</h2><p>How every number in this tool is computed, what files it reads, and where its limits are.</p></div></div>
+    <div class="card prose">
+      <h3>Workflow</h3>
+      <ol>
+        <li><b>Instrument</b> — pick your cytometer in the header. Signatures, similarity and spread are always computed for that detector layout.</li>
+        <li><b>Panel</b> — list markers with expected expression, priority and the cell populations where they are positive. Assign fluors (type to search; aliases such as “AF647” or “PE/Dazzle 594” work).</li>
+        <li><b>Optimize</b> — let the tool suggest a low-complexity fluor set from the library or your stock, and place markers on fluors.</li>
+        <li><b>Library</b> — import your own single-stain controls (FCS) or exported signatures (CSV). Measured signatures replace simulated ones and can calibrate the simulation for every other dye.</li>
+        <li><b>Save</b> the panel as a <code>.spd.json</code> file (includes references, custom dyes and settings). Export CSVs or print a PDF report.</li>
+      </ol>
+
+      <h3>Simulated signatures</h3>
+      <p>For a fluor with excitation spectrum <i>ex(λ)</i> and emission spectrum <i>em(λ)</i>, the signal on detector <i>d</i> (laser <i>L</i>, band [lo, hi]) is</p>
+      <span class="formula">s_d = P_L · k_L · g_d · ex(λ_L) · ∫_lo^hi em(λ) · R(λ) dλ</span>
+      <p>where <i>P_L</i> is laser power, <i>k_L</i> the laser scale (Instrument tab), <i>g_d</i> an optional calibrated detector gain, and <i>R(λ)</i> an approximate detector response. The vector is normalized so its peak channel equals 1. Spectra are resampled to a 4 nm grid (300–940 nm).</p>
+      <p>Simulation ignores beam geometry, PMT/APD voltages, filter roll-off and autofluorescence, so real signatures (especially cross-laser ratios) can differ. Importing even a handful of reference controls and running <b>Calibrate detector gains</b> fits per-detector corrections <i>g_d</i> by weighted alternating least squares in log space (log m = log a_f + log g_d + log s_fd) and applies them to every simulated dye.</p>
+
+      <h3>Similarity and complexity</h3>
+      <span class="formula">similarity(i, j) = s_i · s_j / (‖s_i‖ ‖s_j‖)</span>
+      <span class="formula">complexity index = σ_max(S) / σ_min(S)</span>
+      <p><i>S</i> is the detectors × fluors matrix of peak-normalized signatures, and σ its singular values (the 2-norm condition number). Values grow with panel size; compare alternatives for the same instrument rather than using a fixed cut-off. Similarity limits default to 0.98 (problem) and 0.90 (caution) and can be changed under the Optimize tab's similarity limit.</p>
+
+      <h3>Unmixing and estimated spread</h3>
+      <span class="formula">W = (SᵀS)⁻¹ Sᵀ        (ordinary least squares)</span>
+      <span class="formula">SS(j → k) = √( Σ_d W_kd² · s_jd )        ν_k = √( Σ_d W_kd² )</span>
+      <p>A cell carrying abundance <i>a</i> of fluor <i>j</i> produces detector signals <i>a·s_j</i> whose variance scales with the signal (photon shot noise). After unmixing, the extra variance in fluor <i>k</i> is <i>a·Σ_d W_kd² s_jd</i>, so SS is the spread standard deviation per √intensity — the same quantity a measured spillover spreading matrix reports, up to an instrument-specific constant. Values are therefore <b>relative</b>: use them to rank problem pairs within a panel. ν is the factor by which unmixing amplifies uniform detector background into fluor <i>k</i>.</p>
+
+      <h3>Marker assignment model</h3>
+      <span class="formula">signal_n = E_n · B_f(n)
+var_n = (b · ν_f(n))² + Σ_m c(m,n) · SS(f(m) → f(n))² · signal_m
+R_n = signal_n / √var_n        cost = Σ_n w_n / R_n</span>
+      <p><i>E</i> is expression (1 = low … 4 = very high), <i>B</i> fluor brightness (1–5, editable in the Library), <i>b</i> the background-noise setting, <i>w</i> the priority weight (critical 2, normal 1, low 0.5) and <i>c(m,n)</i> = 1 when two markers share a population tag, otherwise the “non-co-expressed” weight (default 0.15). The search is simulated annealing over swaps and moves (several restarts). “Pick from candidate pool” first chooses a fluor set, then tries swapping each marker's fluor for every compatible pool fluor and re-anneals.</p>
+      <p><b>Population tags:</b> write the populations where a marker is positive and must be resolved, e.g. CD3 → “CD4 T, CD8 T”, CD4 → “CD4 T”, CD8 → “CD8 T”, CD19 → “B”. Spread matters most between markers on the same cells.</p>
+
+      <h3>Autofluorescence</h3>
+      <p>Autofluorescence (AF) profiles — from an unstained cell FCS (median of scatter-gated events), a CSV, or Honeychrome's AutoSpectral AF profiles — are unmixed as extra components. They enter the unmixing matrix, so they change noise amplification ν and the spreading matrix, and they add a spread source present on every cell (“Autofluorescence level” on the Optimize tab sets its intensity, 1–4 on the expression scale). Fluors with ≥ 0.90 similarity to an AF profile are flagged. The headline complexity index is computed for the fluors alone, as instrument software reports it; the value including AF is shown beneath it.</p>
+
+      <h3>Working with Honeychrome</h3>
+      <p><b>Measured library.</b> For the Aurora 5L and ID7000 presets the tool bundles Honeychrome's measured reference library (Aurora: 93 fluors, ID7000: 65). Library spectra are used ahead of simulated ones (your own references still take priority), and simulated dyes are calibrated by default: per-detector gains are fitted to the library dyes that also have FPbase spectra (Instrument tab). In leave-one-out tests this raised agreement between simulated and measured spectra from a mean cosine of 0.94 to 0.96 on the Aurora and 0.83 to 0.92 on the ID7000. The ID7000 channel boundaries were themselves fitted to this library.</p>
+      <p><b>Import Honeychrome…</b> on the Library tab reads an experiment file (<code>.kit</code>): the cleaned reference spectra in <code>process.profiles</code> (channel order from <code>settings.raw.fluorescence_channel_ids</code>), AutoSpectral <code>af_profiles</code>, and the label/antigen pairs of the spectral model. Each spectrum is compared with the measured library spectrum for its fluor (or the simulated one when the library lacks it); low agreement (&lt; 0.80) usually points to a contaminated, mis-gated or mislabeled control. The same button reads a <b>Panel Check</b> export (<code>.json</code>), which adds measured stain indices, unmixing residuals and a spread calibration.</p>
+      <p><b>Panel Check plugin</b> (<code>panel_check_tab.py</code>) runs inside Honeychrome: it unmixes each single-stain control and measures spread as √(rSD²<sub>pos</sub> − rSD²<sub>neg</sub>)/√ΔF (rSD = 84.13th percentile − median), stain index ΔF/(2·rSD<sub>neg</sub>), and residual signal left in other channels. Matching measured to predicted spread gives a scale <i>c</i> (median of log ratios); after import, this tool multiplies its spreading matrix by <i>c</i> for that instrument.</p>
+      <p><b>Export → Single-stain control checklist</b> lists the controls a panel needs, with file names Honeychrome's label detection reads (“Marker Fluor (Cells).fcs”).</p>
+      <p class="muted small">Honeychrome is © Cytkit contributors, LGPL-3.0 (github.com/Cytkit/honeychrome). Its reference library data are included here unmodified in encoded form.</p>
+
+      <h3>Best fluors to add</h3>
+      <p>For each candidate, the panel is re-unmixed with the candidate added (plus any enabled autofluorescence) while existing marker→fluor assignments stay fixed. The new marker (your expression, priority and populations) is placed on the candidate and scored with the assignment model: its predicted resolution <i>R</i>, and the change in Σ w/R over the markers already in the panel. Overall rank = w<sub>new</sub>/R<sub>new</sub> + Δ(existing cost); the complexity index after adding and the closest panel fluor are shown alongside. Candidates above the similarity limit are hidden by default.</p>
+
+      <h3>Fluor-set suggestion</h3>
+      <p>Greedy forward selection (each step adds the candidate giving the lowest objective, never exceeding the similarity limit), followed by swap refinement until no single swap improves the objective. Objectives: complexity index, or trace((SᵀS)⁻¹) — the total noise amplification across all unmixed channels. “Prefer bright fluors” multiplies the objective by 1 + weight · mean(1/B). Thorough mode adds randomized restarts.</p>
+
+      <h3>File formats</h3>
+      <p><b>Reference signatures (CSV/TSV).</b> Either orientation works. Detector names are matched case-insensitively with “-A/-H” suffixes ignored (Aurora: <code>UV1</code>…<code>R8</code>; ID7000: <code>405-1</code>, <code>405nm CH1</code>, …). Values are normalized to their peak.</p>
+      <pre>Fluor,UV1,UV2,…,R8
+BV421,0.012,0.020,…,0.001        (fluors in rows)
+
+Detector,BV421,PE,…
+UV1,0.012,0.000,…               (detectors in rows)</pre>
+      <p><b>Single-stain FCS (2.0/3.0/3.1, list mode).</b> A broad FSC/SSC gate removes debris and doublet-rich extremes; the peak channel is the one with the largest 99.5th-percentile − median; positives are the top 2% (adjustable) of events in that channel excluding saturation; negatives come from an unstained file if you pick one, otherwise the dimmest 30% of the same file. Signature = median(positive) − median(negative) per channel.</p>
+      <p><b>Custom dye spectrum (CSV).</b> Three columns: wavelength (nm), excitation, emission (any scale).</p>
+      <p><b>Instrument (JSON).</b> Export any instrument to see the schema; lasers have <code>wl</code>, <code>power</code>, <code>scale</code> and <code>detectors</code> with <code>name</code> plus <code>center</code>/<code>bw</code> or <code>lo</code>/<code>hi</code>. Use this for Aurora 3L/4L, Northern Lights, FACSDiscover or any other layout.</p>
+
+      <h3>Instrument presets</h3>
+      <p><b>Cytek Aurora 5L</b>: 64 detectors with the published 5-laser filter layout (UV 355 nm/20 mW, V 405/100, B 488/50, YG 561/50, R 640/80). <b>Sony ID7000</b>: per-laser channel counts follow published specifications (355: 35 ch, 405: 35, 488: 32, 561: 26, 637: 19; optional 320: 35 and 808: 2), with all lasers sharing one 35-position grid (488 nm starts at channel 4, 561 nm at channel 10, 637 nm at channel 17). Sony does not publish channel boundaries, so they were fitted to Honeychrome's measured ID7000 library (cross-validated agreement 0.93 on held-out dyes); treat ID7000 simulations as less certain than Aurora ones. If your configuration differs, duplicate the preset and edit it.</p>
+
+      <h3>Spectra and their sources</h3>
+      <p>Excitation/absorption and emission spectra for 271 dyes and fluorescent proteins were retrieved from <b>FPbase</b> (fpbase.org, CC BY-SA 4.0; see FPbase for the original vendor and literature sources). Dyes FPbase does not list are marked <span class="src-tag">approx.</span>: their spectra are built from a related FPbase dye (excitation of the donor/backbone, emission shape of a similar acceptor shifted to the published emission maximum, plus donor residual for PE/APC tandems). Treat approximated dyes as planning estimates and replace them with reference controls before relying on them. Brightness ratings are generic 1–5 estimates — edit them to match your reagents.</p>
+
+      <h3>Privacy</h3>
+      <p>Everything runs inside this single HTML file in your browser. It contains a Content-Security-Policy that blocks all network connections, so no panel, FCS file or reference ever leaves your computer. Work is not stored by the browser: use Save (the tool warns before closing with unsaved changes).</p>
+
+      <h3>Keyboard</h3>
+      <p><code>Ctrl/⌘ S</code> save · <code>Ctrl/⌘ Shift S</code> save as · <code>Ctrl/⌘ O</code> open · <code>Ctrl/⌘ Z</code> undo · <code>Ctrl/⌘ Shift Z</code> redo (outside text fields).</p>
+      <p class="muted small">Spectral Panel Designer __VERSION__ · built __BUILD__ · © Cole Batty and contributors · code LGPL-3.0-or-later; FPbase spectra CC BY-SA 4.0; Honeychrome library LGPL-3.0 · source and issues: https://github.com/OWNER/spectral-panel-designer</p>
+    </div>
+  </section>
+</main>
+<div id="report"></div>
+<datalist id="fluor-options"></datalist>
+<div class="toast-host" id="toasts" aria-live="polite"></div>
+<script>/*__JS__*/</script>
+</body>
+</html>

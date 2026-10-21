@@ -1,0 +1,1091 @@
+{
+ "source": "FPbase GraphQL API (https://www.fpbase.org/graphql/)",
+ "retrieved": "2026-10-20",
+ "license": "CC BY-SA 4.0 (FPbase); attribute original authors listed on each FPbase spectrum page",
+ "fluors": [
+  {
+   "name": "BUV395",
+   "fpbase_owner": "BD Horizon BUV395"
+  },
+  {
+   "name": "BUV496",
+   "fpbase_owner": "BD Horizon BUV496"
+  },
+  {
+   "name": "BUV563",
+   "fpbase_owner": "BD Horizon BUV563"
+  },
+  {
+   "name": "BUV661",
+   "fpbase_owner": "BD Horizon BUV661"
+  },
+  {
+   "name": "BUV737",
+   "fpbase_owner": "BD Horizon BUV737"
+  },
+  {
+   "name": "BUV805",
+   "fpbase_owner": "BD Horizon BUV805"
+  },
+  {
+   "name": "BV421",
+   "fpbase_owner": "Brilliant Violet 421"
+  },
+  {
+   "name": "BV480",
+   "fpbase_owner": "Brilliant Violet 480"
+  },
+  {
+   "name": "BV510",
+   "fpbase_owner": "Brilliant Violet 510"
+  },
+  {
+   "name": "BV570",
+   "fpbase_owner": "Brilliant Violet 570"
+  },
+  {
+   "name": "BV605",
+   "fpbase_owner": "Brilliant Violet 605"
+  },
+  {
+   "name": "BV650",
+   "fpbase_owner": "Brilliant Violet 650"
+  },
+  {
+   "name": "BV711",
+   "fpbase_owner": "Brilliant Violet 711"
+  },
+  {
+   "name": "BV750",
+   "fpbase_owner": "Brilliant Violet 750"
+  },
+  {
+   "name": "BV785",
+   "fpbase_owner": "Brilliant Violet 785"
+  },
+  {
+   "name": "BD Horizon V450",
+   "fpbase_owner": "BD Horizon V450"
+  },
+  {
+   "name": "BD Horizon V500",
+   "fpbase_owner": "BD Horizon V500"
+  },
+  {
+   "name": "BB515",
+   "fpbase_owner": "BD Horizon BB515"
+  },
+  {
+   "name": "BB700",
+   "fpbase_owner": "BD Horizon - BB700"
+  },
+  {
+   "name": "Super Bright 436",
+   "fpbase_owner": "Super Bright 436"
+  },
+  {
+   "name": "Super Bright 600",
+   "fpbase_owner": "Super Bright 600"
+  },
+  {
+   "name": "Super Bright 645",
+   "fpbase_owner": "Super Bright 645"
+  },
+  {
+   "name": "Super Bright 702",
+   "fpbase_owner": "Super Bright 702"
+  },
+  {
+   "name": "Super Bright 780",
+   "fpbase_owner": "Super Bright 780"
+  },
+  {
+   "name": "Pacific Blue",
+   "fpbase_owner": "Pacific Blue"
+  },
+  {
+   "name": "Pacific Green",
+   "fpbase_owner": "Pacific Green"
+  },
+  {
+   "name": "Pacific Orange",
+   "fpbase_owner": "Pacific Orange"
+  },
+  {
+   "name": "eFluor 450",
+   "fpbase_owner": "eFluor 450"
+  },
+  {
+   "name": "eFluor 506",
+   "fpbase_owner": "eFluor 506"
+  },
+  {
+   "name": "eFluor 660",
+   "fpbase_owner": "eFluor 660"
+  },
+  {
+   "name": "Spark Violet 538",
+   "fpbase_owner": "Spark Violet 538"
+  },
+  {
+   "name": "Spark Blue 550",
+   "fpbase_owner": "Spark Blue 550"
+  },
+  {
+   "name": "RealBlue 670",
+   "fpbase_owner": "RealBlue 670"
+  },
+  {
+   "name": "StarBright Yellow 665",
+   "fpbase_owner": "StarBright Yellow 665"
+  },
+  {
+   "name": "Kiravia Blue 520",
+   "fpbase_owner": "Kiravia Blue 520"
+  },
+  {
+   "name": "mFluor Violet 610",
+   "fpbase_owner": "mFluor\u2122 Violet 610"
+  },
+  {
+   "name": "Alexa Fluor 405",
+   "fpbase_owner": "Alexa Fluor 405"
+  },
+  {
+   "name": "Alexa Fluor 430",
+   "fpbase_owner": "Alexa Fluor 430"
+  },
+  {
+   "name": "Alexa Fluor 488",
+   "fpbase_owner": "Alexa Fluor 488"
+  },
+  {
+   "name": "Alexa Fluor 532",
+   "fpbase_owner": "Alexa Fluor 532"
+  },
+  {
+   "name": "Alexa Fluor 546",
+   "fpbase_owner": "Alexa Fluor 546"
+  },
+  {
+   "name": "Alexa Fluor 555",
+   "fpbase_owner": "Alexa Fluor 555"
+  },
+  {
+   "name": "Alexa Fluor 568",
+   "fpbase_owner": "Alexa Fluor 568"
+  },
+  {
+   "name": "Alexa Fluor 594",
+   "fpbase_owner": "Alexa Fluor 594"
+  },
+  {
+   "name": "Alexa Fluor 610",
+   "fpbase_owner": "Alexa Fluor 610"
+  },
+  {
+   "name": "Alexa Fluor 633",
+   "fpbase_owner": "Alexa Fluor 633"
+  },
+  {
+   "name": "Alexa Fluor 647",
+   "fpbase_owner": "Alexa Fluor 647"
+  },
+  {
+   "name": "Alexa Fluor 660",
+   "fpbase_owner": "Alexa Fluor 660"
+  },
+  {
+   "name": "Alexa Fluor 680",
+   "fpbase_owner": "Alexa Fluor 680"
+  },
+  {
+   "name": "Alexa Fluor 700",
+   "fpbase_owner": "Alexa Fluor 700"
+  },
+  {
+   "name": "Alexa Fluor 750",
+   "fpbase_owner": "Alexa Fluor 750"
+  },
+  {
+   "name": "Alexa Fluor 790",
+   "fpbase_owner": "Alexa Fluor 790"
+  },
+  {
+   "name": "FITC",
+   "fpbase_owner": "Fluorescein (FITC)"
+  },
+  {
+   "name": "DyLight 405",
+   "fpbase_owner": "DyLight 405"
+  },
+  {
+   "name": "DyLight 649",
+   "fpbase_owner": "DyLight 649"
+  },
+  {
+   "name": "DyLight 755",
+   "fpbase_owner": "DyLight 755"
+  },
+  {
+   "name": "iFluor 647",
+   "fpbase_owner": "iFluor 647"
+  },
+  {
+   "name": "Cy3",
+   "fpbase_owner": "Cy3"
+  },
+  {
+   "name": "Cy5",
+   "fpbase_owner": "Cy5"
+  },
+  {
+   "name": "Cy5.5",
+   "fpbase_owner": "Cy5.5"
+  },
+  {
+   "name": "Cy7",
+   "fpbase_owner": "Cy7"
+  },
+  {
+   "name": "Texas Red",
+   "fpbase_owner": "Texas Red"
+  },
+  {
+   "name": "PE",
+   "fpbase_owner": "PE (R-PE / R-phycoerythrin)"
+  },
+  {
+   "name": "PE-Alexa Fluor 610",
+   "fpbase_owner": "PE-Alexa Fluor 610"
+  },
+  {
+   "name": "PE-Alexa Fluor 700",
+   "fpbase_owner": "PE-Alexa Fluor 700"
+  },
+  {
+   "name": "PE-CF594",
+   "fpbase_owner": "PE-CF594"
+  },
+  {
+   "name": "PE-Dazzle 594",
+   "fpbase_owner": "PE/Dazzle 594"
+  },
+  {
+   "name": "PE-eFluor 610",
+   "fpbase_owner": "PE-eFluor 610"
+  },
+  {
+   "name": "PE-Texas Red",
+   "fpbase_owner": "PE-Texas Red"
+  },
+  {
+   "name": "PE-Cy5",
+   "fpbase_owner": "PE-Cy5"
+  },
+  {
+   "name": "PE-Cy5.5",
+   "fpbase_owner": "PE-Cy5.5"
+  },
+  {
+   "name": "PE-Cy7",
+   "fpbase_owner": "PE-Cy7"
+  },
+  {
+   "name": "PE-Fire 780",
+   "fpbase_owner": "PE/Fire 780"
+  },
+  {
+   "name": "PerCP",
+   "fpbase_owner": "PerCP"
+  },
+  {
+   "name": "PerCP-Cy5.5",
+   "fpbase_owner": "PerCP-Cy5.5"
+  },
+  {
+   "name": "PerCP-eFluor 710",
+   "fpbase_owner": "PerCP-eFluor 710"
+  },
+  {
+   "name": "APC",
+   "fpbase_owner": "APC (allophycocyanin)"
+  },
+  {
+   "name": "APC-Alexa Fluor 750",
+   "fpbase_owner": "APC-Alexa Fluor 750"
+  },
+  {
+   "name": "APC-Cy7",
+   "fpbase_owner": "APC/Cy7"
+  },
+  {
+   "name": "APC-eFluor 780",
+   "fpbase_owner": "APC-eFluor 780"
+  },
+  {
+   "name": "APC-Fire 750",
+   "fpbase_owner": "APC/Fire-750"
+  },
+  {
+   "name": "APC-H7",
+   "fpbase_owner": "APC/H7"
+  },
+  {
+   "name": "Alexa Fluor 680-APC",
+   "fpbase_owner": "Alexa Fluor 680-allophycocyanin (APC)"
+  },
+  {
+   "name": "Qdot 605",
+   "fpbase_owner": "Qdot 605"
+  },
+  {
+   "name": "Qdot 655",
+   "fpbase_owner": "Qdot 655"
+  },
+  {
+   "name": "Qdot 705",
+   "fpbase_owner": "Qdot 705"
+  },
+  {
+   "name": "Qdot 800",
+   "fpbase_owner": "Qdot 800"
+  },
+  {
+   "name": "DAPI",
+   "fpbase_owner": "DAPI"
+  },
+  {
+   "name": "7-AAD",
+   "fpbase_owner": "7-AAD"
+  },
+  {
+   "name": "Propidium Iodide",
+   "fpbase_owner": "Propidium Iodide"
+  },
+  {
+   "name": "SYTOX Blue",
+   "fpbase_owner": "SYTOX Blue"
+  },
+  {
+   "name": "SYTOX Green",
+   "fpbase_owner": "SYTOX Green"
+  },
+  {
+   "name": "SYTOX Red",
+   "fpbase_owner": "SYTOX Red"
+  },
+  {
+   "name": "SYTOX AADvanced",
+   "fpbase_owner": "SYTOX AADvanced dead cell stain"
+  },
+  {
+   "name": "Calcein AM",
+   "fpbase_owner": "Calcein AM"
+  },
+  {
+   "name": "Calcein Violet 450 AM",
+   "fpbase_owner": "Calcein Violet 450 AM"
+  },
+  {
+   "name": "CFSE",
+   "fpbase_owner": "CFSE (fluorescein, CFDA, SE)"
+  },
+  {
+   "name": "CellTrace Violet",
+   "fpbase_owner": "CellTrace Violet stain"
+  },
+  {
+   "name": "CellTrace Yellow",
+   "fpbase_owner": "CellTrace Yellow"
+  },
+  {
+   "name": "CellTrace Far Red",
+   "fpbase_owner": "CellTrace Far Red"
+  },
+  {
+   "name": "CPD eFluor 450",
+   "fpbase_owner": "Cell Proliferation Dye eFluor 450"
+  },
+  {
+   "name": "CPD eFluor 670",
+   "fpbase_owner": "Cell Proliferation Dye eFluor 670"
+  },
+  {
+   "name": "Zombie UV",
+   "fpbase_owner": "Zombie UV"
+  },
+  {
+   "name": "Zombie Violet",
+   "fpbase_owner": "Zombie Violet"
+  },
+  {
+   "name": "Zombie Aqua",
+   "fpbase_owner": "Zombie Aqua"
+  },
+  {
+   "name": "Zombie Green",
+   "fpbase_owner": "Zombie Green"
+  },
+  {
+   "name": "Zombie Yellow",
+   "fpbase_owner": "Zombie Yellow"
+  },
+  {
+   "name": "Zombie Red",
+   "fpbase_owner": "Zombie Red"
+  },
+  {
+   "name": "Zombie NIR",
+   "fpbase_owner": "Zombie NIR"
+  },
+  {
+   "name": "LIVE/DEAD Blue",
+   "fpbase_owner": "LIVE/DEAD Fixable Blue"
+  },
+  {
+   "name": "LIVE/DEAD Violet",
+   "fpbase_owner": "LIVE/DEAD Fixable Violet"
+  },
+  {
+   "name": "LIVE/DEAD Aqua",
+   "fpbase_owner": "LIVE/DEAD Fixable Aqua"
+  },
+  {
+   "name": "LIVE/DEAD Green",
+   "fpbase_owner": "LIVE/DEAD Fixable Green"
+  },
+  {
+   "name": "LIVE/DEAD Yellow",
+   "fpbase_owner": "LIVE/DEAD Fixable Yellow"
+  },
+  {
+   "name": "LIVE/DEAD Red",
+   "fpbase_owner": "LIVE/DEAD Fixable Red"
+  },
+  {
+   "name": "LIVE/DEAD Far Red",
+   "fpbase_owner": "LIVE/DEAD Fixable Far Red"
+  },
+  {
+   "name": "LIVE/DEAD Near-IR",
+   "fpbase_owner": "LIVE/DEAD Fixable Near-IR"
+  },
+  {
+   "name": "FVD eFluor 455UV",
+   "fpbase_owner": "Fixable Viability Dye eFluor 455UV"
+  },
+  {
+   "name": "FVD eFluor 450",
+   "fpbase_owner": "Fixable Viability Dye eFluor 450"
+  },
+  {
+   "name": "FVD eFluor 506",
+   "fpbase_owner": "Fixable Viability Dye eFluor 506"
+  },
+  {
+   "name": "FVD eFluor 520",
+   "fpbase_owner": "Fixable Viability Dye eFluor 520"
+  },
+  {
+   "name": "FVD eFluor 660",
+   "fpbase_owner": "Fixable Viability Dye eFluor 660"
+  },
+  {
+   "name": "FVD eFluor 780",
+   "fpbase_owner": "Fixable Viability Dye eFluor 780"
+  },
+  {
+   "name": "EGFP",
+   "fpbase_owner": "EGFP"
+  },
+  {
+   "name": "mCherry",
+   "fpbase_owner": "mCherry"
+  },
+  {
+   "name": "tdTomato",
+   "fpbase_owner": "tdTomato"
+  },
+  {
+   "name": "mNeonGreen",
+   "fpbase_owner": "mNeonGreen"
+  },
+  {
+   "name": "EYFP",
+   "fpbase_owner": "EYFP"
+  },
+  {
+   "name": "mTagBFP2",
+   "fpbase_owner": "mTagBFP2"
+  },
+  {
+   "name": "ECFP",
+   "fpbase_owner": "ECFP"
+  },
+  {
+   "name": "mTurquoise2",
+   "fpbase_owner": "mTurquoise2"
+  },
+  {
+   "name": "mScarlet",
+   "fpbase_owner": "mScarlet"
+  },
+  {
+   "name": "mScarlet-I",
+   "fpbase_owner": "mScarlet-I"
+  },
+  {
+   "name": "Venus",
+   "fpbase_owner": "Venus"
+  },
+  {
+   "name": "ZsGreen",
+   "fpbase_owner": "ZsGreen"
+  },
+  {
+   "name": "DsRed-Express2",
+   "fpbase_owner": "DsRed-Express2"
+  },
+  {
+   "name": "mKate2",
+   "fpbase_owner": "mKate2"
+  },
+  {
+   "name": "mOrange2",
+   "fpbase_owner": "mOrange2"
+  },
+  {
+   "name": "iRFP670",
+   "fpbase_owner": "iRFP670"
+  },
+  {
+   "name": "iRFP713",
+   "fpbase_owner": "iRFP713"
+  },
+  {
+   "name": "iRFP720",
+   "fpbase_owner": "iRFP720"
+  },
+  {
+   "name": "mCerulean3",
+   "fpbase_owner": "mCerulean3"
+  },
+  {
+   "name": "TagRFP-T",
+   "fpbase_owner": "TagRFP-T"
+  },
+  {
+   "name": "mRuby3",
+   "fpbase_owner": "mRuby3"
+  },
+  {
+   "name": "T-Sapphire",
+   "fpbase_owner": "T-Sapphire"
+  },
+  {
+   "name": "mPlum",
+   "fpbase_owner": "mPlum"
+  },
+  {
+   "name": "E2-Crimson",
+   "fpbase_owner": "E2-Crimson"
+  },
+  {
+   "name": "miRFP670",
+   "fpbase_owner": "miRFP670"
+  },
+  {
+   "name": "mClover3",
+   "fpbase_owner": "mClover3"
+  },
+  {
+   "name": "EBFP2",
+   "fpbase_owner": "EBFP2"
+  },
+  {
+   "name": "Superfolder GFP",
+   "fpbase_owner": "Superfolder GFP"
+  },
+  {
+   "name": "mEmerald",
+   "fpbase_owner": "mEmerald"
+  },
+  {
+   "name": "mCitrine",
+   "fpbase_owner": "mCitrine"
+  },
+  {
+   "name": "mGreenLantern",
+   "fpbase_owner": "mGreenLantern"
+  },
+  {
+   "name": "mStayGold",
+   "fpbase_owner": "mStayGold"
+  },
+  {
+   "name": "Alexa Fluor 350",
+   "fpbase_owner": "Alexa Fluor 350"
+  },
+  {
+   "name": "CF350",
+   "fpbase_owner": "CF350"
+  },
+  {
+   "name": "CF405S",
+   "fpbase_owner": "CF405S"
+  },
+  {
+   "name": "CF405M",
+   "fpbase_owner": "CF405M"
+  },
+  {
+   "name": "CF405L",
+   "fpbase_owner": "CF405L"
+  },
+  {
+   "name": "CF410",
+   "fpbase_owner": "CF410"
+  },
+  {
+   "name": "CF430",
+   "fpbase_owner": "CF430"
+  },
+  {
+   "name": "CF440",
+   "fpbase_owner": "CF440"
+  },
+  {
+   "name": "CF450",
+   "fpbase_owner": "CF450"
+  },
+  {
+   "name": "CF488A",
+   "fpbase_owner": "CF488A"
+  },
+  {
+   "name": "CF500",
+   "fpbase_owner": "CF500"
+  },
+  {
+   "name": "CF503R",
+   "fpbase_owner": "CF503R"
+  },
+  {
+   "name": "CF514",
+   "fpbase_owner": "CF514"
+  },
+  {
+   "name": "CF532",
+   "fpbase_owner": "CF532"
+  },
+  {
+   "name": "CF543",
+   "fpbase_owner": "CF543"
+  },
+  {
+   "name": "CF550R",
+   "fpbase_owner": "CF550R"
+  },
+  {
+   "name": "CF555",
+   "fpbase_owner": "CF555"
+  },
+  {
+   "name": "CF568",
+   "fpbase_owner": "CF568"
+  },
+  {
+   "name": "CF570",
+   "fpbase_owner": "CF570"
+  },
+  {
+   "name": "CF583",
+   "fpbase_owner": "CF583"
+  },
+  {
+   "name": "CF583R",
+   "fpbase_owner": "CF583R"
+  },
+  {
+   "name": "CF594",
+   "fpbase_owner": "CF594"
+  },
+  {
+   "name": "CF620R",
+   "fpbase_owner": "CF620R"
+  },
+  {
+   "name": "CF633",
+   "fpbase_owner": "CF633"
+  },
+  {
+   "name": "CF640R",
+   "fpbase_owner": "CF640R"
+  },
+  {
+   "name": "CF647",
+   "fpbase_owner": "CF647"
+  },
+  {
+   "name": "CF650",
+   "fpbase_owner": "CF650"
+  },
+  {
+   "name": "CF660C",
+   "fpbase_owner": "CF660C"
+  },
+  {
+   "name": "CF660R",
+   "fpbase_owner": "CF660R"
+  },
+  {
+   "name": "CF680",
+   "fpbase_owner": "CF680"
+  },
+  {
+   "name": "CF680R",
+   "fpbase_owner": "CF680R"
+  },
+  {
+   "name": "CF700",
+   "fpbase_owner": "CF700"
+  },
+  {
+   "name": "CF750",
+   "fpbase_owner": "CF750"
+  },
+  {
+   "name": "CF770",
+   "fpbase_owner": "CF770"
+  },
+  {
+   "name": "CF790",
+   "fpbase_owner": "CF790"
+  },
+  {
+   "name": "CF800",
+   "fpbase_owner": "CF800"
+  },
+  {
+   "name": "CF820",
+   "fpbase_owner": "CF820"
+  },
+  {
+   "name": "NovaFluor Blue 510",
+   "fpbase_owner": "NovaBlue 510"
+  },
+  {
+   "name": "NovaFluor Blue 530",
+   "fpbase_owner": "NovaBlue 530"
+  },
+  {
+   "name": "NovaFluor Blue 555",
+   "fpbase_owner": "NovaBlue 555"
+  },
+  {
+   "name": "NovaFluor Blue 610/30S",
+   "fpbase_owner": "NovaBlue 610 / 30S"
+  },
+  {
+   "name": "NovaFluor Blue 610/70S",
+   "fpbase_owner": "NovaBlue 610 / 70S"
+  },
+  {
+   "name": "NovaFluor Blue 660/40S",
+   "fpbase_owner": "NovaBlue 660 / 40S"
+  },
+  {
+   "name": "NovaFluor Blue 660/120S",
+   "fpbase_owner": "NovaBlue 660 / 120S"
+  },
+  {
+   "name": "NovaFluor Red 660",
+   "fpbase_owner": "NovaRed 660"
+  },
+  {
+   "name": "NovaFluor Red 685",
+   "fpbase_owner": "NovaRed 685"
+  },
+  {
+   "name": "NovaFluor Red 700",
+   "fpbase_owner": "NovaRed 700"
+  },
+  {
+   "name": "NovaFluor Yellow 570",
+   "fpbase_owner": "NovaYellow 570"
+  },
+  {
+   "name": "NovaFluor Yellow 610",
+   "fpbase_owner": "NovaYellow 610"
+  },
+  {
+   "name": "NovaFluor Yellow 660",
+   "fpbase_owner": "NovaYellow 660"
+  },
+  {
+   "name": "NovaFluor Yellow 690",
+   "fpbase_owner": "NovaYellow 690"
+  },
+  {
+   "name": "NovaFluor Yellow 700",
+   "fpbase_owner": "NovaYellow 700"
+  },
+  {
+   "name": "MitoSpy Orange CMTMRos",
+   "fpbase_owner": "MitoSpy Orange CMTMRos"
+  },
+  {
+   "name": "MitoSpy Red CMXRos",
+   "fpbase_owner": "MitoSpy Red CMXRos"
+  },
+  {
+   "name": "MitoSpy Green FM",
+   "fpbase_owner": "MitoSpy Green FM"
+  },
+  {
+   "name": "MitoSpy NIR DiIC1(5)",
+   "fpbase_owner": "MitoSpy NIR DiIC1(5)"
+  },
+  {
+   "name": "MitoTracker Green FM",
+   "fpbase_owner": "MitoTracker Green FM"
+  },
+  {
+   "name": "MitoTracker Deep Red FM",
+   "fpbase_owner": "MitoTracker Deep Red FM"
+  },
+  {
+   "name": "MitoTracker Orange",
+   "fpbase_owner": "MitoTracker Orange"
+  },
+  {
+   "name": "MitoTracker Red",
+   "fpbase_owner": "MitoTracker Red"
+  },
+  {
+   "name": "TMRE",
+   "fpbase_owner": "TMRE"
+  },
+  {
+   "name": "Rhodamine 123",
+   "fpbase_owner": "Rhodamine 123"
+  },
+  {
+   "name": "Hoechst 33342",
+   "fpbase_owner": "Hoechst 33342"
+  },
+  {
+   "name": "Hoechst 33258",
+   "fpbase_owner": "Hoechst 33258"
+  },
+  {
+   "name": "DRAQ5",
+   "fpbase_owner": "DRAQ5"
+  },
+  {
+   "name": "DRAQ7",
+   "fpbase_owner": "DRAQ7"
+  },
+  {
+   "name": "SYTOX Orange",
+   "fpbase_owner": "SYTOX Orange"
+  },
+  {
+   "name": "DyeCycle Violet",
+   "fpbase_owner": "Vybrant DyeCycle Violet stain"
+  },
+  {
+   "name": "FxCycle Violet",
+   "fpbase_owner": "FxCycle Violet"
+  },
+  {
+   "name": "Cascade Blue",
+   "fpbase_owner": "Cascade Blue"
+  },
+  {
+   "name": "Marina Blue",
+   "fpbase_owner": "Marina Blue"
+  },
+  {
+   "name": "Oregon Green 488",
+   "fpbase_owner": "Oregon Green 488"
+  },
+  {
+   "name": "Cascade Yellow",
+   "fpbase_owner": "Cascade Yellow"
+  },
+  {
+   "name": "eFluor 570",
+   "fpbase_owner": "eFluor 570"
+  },
+  {
+   "name": "eFluor 615",
+   "fpbase_owner": "eFluor 615"
+  },
+  {
+   "name": "eFluor 710",
+   "fpbase_owner": "eFluor 710"
+  },
+  {
+   "name": "iFluor 350",
+   "fpbase_owner": "iFluor 350"
+  },
+  {
+   "name": "iFluor 450",
+   "fpbase_owner": "iFluor 450"
+  },
+  {
+   "name": "iFluor 488",
+   "fpbase_owner": "iFluor 488"
+  },
+  {
+   "name": "mFluor Blue 630",
+   "fpbase_owner": "mFluor\u2122 Blue 630"
+  },
+  {
+   "name": "mFluor Blue 659",
+   "fpbase_owner": "mFluor Blue 659"
+  },
+  {
+   "name": "mFluor Green 620",
+   "fpbase_owner": "mFluor Green 620"
+  },
+  {
+   "name": "Seta-APC-705",
+   "fpbase_owner": "Seta-APC-705"
+  },
+  {
+   "name": "Seta-APC-780",
+   "fpbase_owner": "Seta-APC-780"
+  },
+  {
+   "name": "Seta-PerCP-680",
+   "fpbase_owner": "Seta-PerCP-680"
+  },
+  {
+   "name": "APC-Astral813",
+   "fpbase_owner": "APC-Astral813"
+  },
+  {
+   "name": "RPE-CF647T",
+   "fpbase_owner": "RPE-CF647T"
+  },
+  {
+   "name": "Calcein Blue AM",
+   "fpbase_owner": "Calcein Blue AM (calcein blue)"
+  },
+  {
+   "name": "CellTrace Blue",
+   "fpbase_owner": "CellTrace Blue"
+  },
+  {
+   "name": "Cy3.5",
+   "fpbase_owner": "Cy3.5"
+  },
+  {
+   "name": "Cy3B",
+   "fpbase_owner": "Cy3B"
+  },
+  {
+   "name": "TRITC",
+   "fpbase_owner": "Tetramethylrhodamine (TAMRA, TRITC)"
+  },
+  {
+   "name": "DyLight 488",
+   "fpbase_owner": "DyLight 488"
+  },
+  {
+   "name": "DyLight 550",
+   "fpbase_owner": "DyLight 550"
+  },
+  {
+   "name": "DyLight 633",
+   "fpbase_owner": "DyLight 633"
+  },
+  {
+   "name": "DyLight 680",
+   "fpbase_owner": "DyLight 680"
+  },
+  {
+   "name": "ATTO 488",
+   "fpbase_owner": "ATTO 488"
+  },
+  {
+   "name": "ATTO 532",
+   "fpbase_owner": "ATTO 532"
+  },
+  {
+   "name": "ATTO 550",
+   "fpbase_owner": "ATTO 550"
+  },
+  {
+   "name": "ATTO 565",
+   "fpbase_owner": "ATTO 565"
+  },
+  {
+   "name": "ATTO 594",
+   "fpbase_owner": "ATTO 594"
+  },
+  {
+   "name": "ATTO 633",
+   "fpbase_owner": "ATTO 633"
+  },
+  {
+   "name": "ATTO 647N",
+   "fpbase_owner": "ATTO 647N"
+  },
+  {
+   "name": "ATTO 655",
+   "fpbase_owner": "ATTO 655"
+  },
+  {
+   "name": "ATTO 680",
+   "fpbase_owner": "ATTO 680"
+  },
+  {
+   "name": "ATTO 700",
+   "fpbase_owner": "ATTO 700"
+  },
+  {
+   "name": "Live-or-Dye 405/452",
+   "fpbase_owner": "Live-or-Dye 405/452"
+  },
+  {
+   "name": "Live-or-Dye 405/545",
+   "fpbase_owner": "Live-or-Dye 405/545"
+  },
+  {
+   "name": "Live-or-Dye 488/515",
+   "fpbase_owner": "Live-or-Dye 488/515"
+  },
+  {
+   "name": "Live-or-Dye 640/662",
+   "fpbase_owner": "Live-or-Dye 640/662"
+  },
+  {
+   "name": "Live-or-Dye 750/777",
+   "fpbase_owner": "Live-or-Dye 750/777"
+  },
+  {
+   "name": "Qdot 525",
+   "fpbase_owner": "Qdot 525"
+  },
+  {
+   "name": "Qdot 545",
+   "fpbase_owner": "Qdot 545"
+  },
+  {
+   "name": "Qdot 565",
+   "fpbase_owner": "Qdot 565"
+  },
+  {
+   "name": "Qdot 585",
+   "fpbase_owner": "Qdot 585"
+  },
+  {
+   "name": "Qdot 625",
+   "fpbase_owner": "Qdot 625"
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "spectral-panel-designer",
+  "version": "0.9.0",
+  "description": "Offline, single-file tool for designing spectral flow cytometry panels: similarity, complexity, predicted spread, fluor and marker optimization, with Honeychrome integration.",
+  "license": "LGPL-3.0-or-later",
+  "author": "Cole Batty",
+  "homepage": "https://OWNER.github.io/spectral-panel-designer/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OWNER/spectral-panel-designer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/OWNER/spectral-panel-designer/issues"
+  },
+  "keywords": [
+    "flow cytometry",
+    "spectral cytometry",
+    "panel design",
+    "fluorochrome",
+    "unmixing",
+    "honeychrome"
+  ],
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/unit/*.test.cjs",
+    "test:e2e": "node scripts/build.mjs && playwright test",
+    "validate": "node tools/validate_against_library.mjs",
+    "screenshots": "node scripts/screenshots.mjs",
+    "test:plugin": "python -m pytest -q plugin/tests"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.0"
+  }
+}

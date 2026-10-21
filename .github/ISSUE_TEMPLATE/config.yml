@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Honeychrome (analysis software)
+    url: https://github.com/Cytkit/honeychrome/issues
+    about: Problems with Honeychrome itself, rather than the Panel Check plugin or the designer.

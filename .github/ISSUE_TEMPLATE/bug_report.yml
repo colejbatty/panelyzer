@@ -1,0 +1,31 @@
+name: Bug report
+description: Something doesn't work or gives a wrong result
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what you saw instead.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: App version
+      description: Shown at the bottom of Methods & help (e.g. 0.9.0).
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and OS
+      placeholder: Chrome 141 on Windows 11
+  - type: dropdown
+    id: instrument
+    attributes:
+      label: Instrument
+      options: [Cytek Aurora 5L, Sony ID7000 5-laser, Sony ID7000 7-laser, Custom, Not relevant]
+  - type: textarea
+    id: files
+    attributes:
+      label: Panel file or screenshots
+      description: Drag in the .spd.json (Save) or screenshots if you can share them. Please don't attach patient or unpublished experiment data.

@@ -1,0 +1,279 @@
+{
+ "fileVersion": 1,
+ "app": "spectral-panel-designer",
+ "panelName": "Example: 24-color human PBMC",
+ "instrumentId": "aurora-5l",
+ "customInstruments": [],
+ "instOverrides": {},
+ "fluorOverrides": {},
+ "customFluors": [],
+ "references": {},
+ "useReferences": true,
+ "autofluorescence": {},
+ "rows": [
+  {
+   "id": "o913kbvh",
+   "marker": "Live/Dead",
+   "fluor": "Zombie NIR",
+   "expression": 4,
+   "priority": "normal",
+   "tags": "all",
+   "locked": false,
+   "notes": ""
+  },
+  {
+   "id": "bvwn0ww3",
+   "marker": "CD45",
+   "fluor": "BUV805",
+   "expression": 3,
+   "priority": "low",
+   "tags": "all",
+   "locked": false,
+   "notes": ""
+  },
+  {
+   "id": "zcfj5h1u",
+   "marker": "CD3",
+   "fluor": "BUV395",
+   "expression": 3,
+   "priority": "normal",
+   "tags": "CD4 T, CD8 T",
+   "locked": false,
+   "notes": ""
+  },
+  {
+   "id": "gtt0w5pk",
+   "marker": "CD4",
+   "fluor": "BUV496",
+   "expression": 3,
+   "priority": "normal",
+   "tags": "CD4 T",
+   "locked": false,
+   "notes": ""
+  },
+  {
+   "id": "pqrgblah",
+   "marker": "CD8",
+   "fluor": "BV510",
+   "expression": 3,
+   "priority": "normal",
+   "tags": "CD8 T",
+   "locked": false,
+   "notes": ""
+  },
+  {
+   "id": "owipcuk9",
+   "marker": "CD45RA",
+   "fluor": "BUV737",
+   "expression": 3,
+   "priority": "normal",
+   "tags": "CD4 T, CD8 T, B, NK",
+   "locked": false,
+   "notes": ""
+  },
+  {
+   "id": "008h5cyw",
+   "marker": "CCR7",
+   "fluor": "BV421",
+   "expression": 2,
+   "priority": "critical",
+   "tags": "CD4 T, CD8 T",
+   "locked": false,
+   "notes": ""
+  },
+  {
+   "id": "bklsjhrk",
+   "marker": "CD27",
+   "fluor": "BV785",
+   "expression": 2,
+   "priority": "normal",
+   "tags": "CD4 T, CD8 T, B",
+   "locked": false,
+   "notes": ""
+  },
+  {
+   "id": "aqkw3k98",
+   "marker": "CD28",
+   "fluor": "BV605",
+   "expression": 2,
+   "priority": "normal",
+   "tags": "CD4 T, CD8 T",
+   "locked": false,
+   "notes": ""
+  },
+  {
+   "id": "f4y320sh",
+   "marker": "PD-1",
+   "fluor": "PE",
+   "expression": 1,
+   "priority": "critical",
+   "tags": "CD4 T, CD8 T",
+   "locked": false,
+   "notes": ""
+  },
+  {
+   "id": "wculn908",
+   "marker": "CD25",
+   "fluor": "PE-Cy5",
+   "expression": 1,
+   "priority": "critical",
+   "tags": "CD4 T",
+   "locked": false,
+   "notes": ""
+  },
+  {
+   "id": "mvmncx2o",
+   "marker": "CD127",
+   "fluor": "BV711",
+   "expression": 2,
+   "priority": "normal",
+   "tags": "CD4 T, CD8 T",
+   "locked": false,
+   "notes": ""
+  },
+  {
+   "id": "8xs899ds",
+   "marker": "HLA-DR",
+   "fluor": "BV650",
+   "expression": 3,
+   "priority": "normal",
+   "tags": "B, Mono, CD4 T, CD8 T",
+   "locked": false,
+   "notes": ""
+  },
+  {
+   "id": "y6gvhwd3",
+   "marker": "CD19",
+   "fluor": "BUV563",
+   "expression": 3,
+   "priority": "normal",
+   "tags": "B",
+   "locked": false,
+   "notes": ""
+  },
+  {
+   "id": "gfvpwvw4",
+   "marker": "CD56",
+   "fluor": "BUV661",
+   "expression": 2,
+   "priority": "normal",
+   "tags": "NK",
+   "locked": false,
+   "notes": ""
+  },
+  {
+   "id": "romau7zt",
+   "marker": "CD16",
+   "fluor": "BB515",
+   "expression": 3,
+   "priority": "normal",
+   "tags": "NK, Mono",
+   "locked": false,
+   "notes": ""
+  },
+  {
+   "id": "hofwv68w",
+   "marker": "CD14",
+   "fluor": "BV570",
+   "expression": 3,
+   "priority": "normal",
+   "tags": "Mono",
+   "locked": false,
+   "notes": ""
+  },
+  {
+   "id": "anv13amy",
+   "marker": "CD38",
+   "fluor": "APC-Fire 750",
+   "expression": 3,
+   "priority": "normal",
+   "tags": "B, CD4 T, CD8 T, NK",
+   "locked": false,
+   "notes": ""
+  },
+  {
+   "id": "7horeuyz",
+   "marker": "CXCR5",
+   "fluor": "BB700",
+   "expression": 1,
+   "priority": "critical",
+   "tags": "CD4 T, B",
+   "locked": false,
+   "notes": ""
+  },
+  {
+   "id": "t6gpfk2d",
+   "marker": "CD57",
+   "fluor": "Spark Blue 550",
+   "expression": 3,
+   "priority": "normal",
+   "tags": "CD8 T, NK",
+   "locked": false,
+   "notes": ""
+  },
+  {
+   "id": "sqnbezoc",
+   "marker": "TIGIT",
+   "fluor": "PE-Cy7",
+   "expression": 2,
+   "priority": "normal",
+   "tags": "CD8 T, NK",
+   "locked": false,
+   "notes": ""
+  },
+  {
+   "id": "98xyxbba",
+   "marker": "CD161",
+   "fluor": "APC",
+   "expression": 2,
+   "priority": "normal",
+   "tags": "CD8 T, NK",
+   "locked": false,
+   "notes": ""
+  },
+  {
+   "id": "5vo5xmsg",
+   "marker": "CD95",
+   "fluor": "PE-Cy5.5",
+   "expression": 2,
+   "priority": "normal",
+   "tags": "CD4 T, CD8 T",
+   "locked": false,
+   "notes": ""
+  },
+  {
+   "id": "6ibzl3li",
+   "marker": "CD39",
+   "fluor": "Alexa Fluor 700",
+   "expression": 1,
+   "priority": "normal",
+   "tags": "CD4 T",
+   "locked": false,
+   "notes": ""
+  }
+ ],
+ "settings": {
+  "simWarn": 0.98,
+  "simCaution": 0.9,
+  "spreadScale": 1,
+  "background": 3,
+  "unrelatedWeight": 0.15,
+  "theme": "auto",
+  "afLevel": 2,
+  "useHCLibrary": true,
+  "autoCalibrate": true
+ },
+ "ui": {
+  "tab": "panel",
+  "highlight": [],
+  "libFilter": {
+   "q": "",
+   "group": "",
+   "laser": "",
+   "source": "",
+   "inventory": false
+  }
+ },
+ "savedAt": "2026-10-21T02:26:54.493Z",
+ "appVersion": "0.9.0"
+}

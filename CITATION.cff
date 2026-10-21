@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use Spectral Panel Designer, please cite it as below, and cite FPbase for the spectra."
+title: "Spectral Panel Designer"
+abstract: "Offline, single-file tool for designing spectral flow cytometry panels: signature similarity, complexity index, predicted spillover spreading, fluor-set and marker-assignment optimization, with Honeychrome integration."
+type: software
+authors:
+  - family-names: Batty
+    given-names: Cole
+version: 0.9.0
+date-released: 2026-10-20
+license: LGPL-3.0-or-later
+repository-code: "https://github.com/OWNER/spectral-panel-designer"
+url: "https://OWNER.github.io/spectral-panel-designer/"
+keywords:
+  - flow cytometry
+  - spectral cytometry
+  - panel design
+  - unmixing
+references:
+  - type: article
+    title: "FPbase: a community-editable fluorescent protein database"
+    authors:
+      - family-names: Lambert
+        given-names: Talley J.
+    journal: "Nature Methods"
+    volume: 16
+    start: 277
+    end: 278
+    year: 2019
+    doi: "10.1038/s41592-019-0352-8"

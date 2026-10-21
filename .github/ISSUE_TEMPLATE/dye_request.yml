@@ -1,0 +1,27 @@
+name: Dye or spectrum request
+description: A fluor is missing, has the wrong spectrum, or needs an alias
+labels: [data]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Fluor name(s)
+      placeholder: e.g. "cFluor R720", also sold as ...
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Request
+      options: [Add a missing dye, Spectrum looks wrong, Add an alias / vendor name, Brightness rating]
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Source
+      description: FPbase link, manufacturer spectrum page, or a measured reference (exported signature CSV) from your instrument.
+  - type: input
+    id: instrument
+    attributes:
+      label: Instrument (for measured references)
